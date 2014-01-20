@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>nl.wulder</groupId>
+  <artifactId>fitnesse-maven</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <repositories>
+    <repository>
+      <id>java.net.m2</id>
+      <name>java.net m2 repo</name>
+      <url>http://download.java.net/maven/2</url>
+    </repository>
+    <repository>
+      <id>spring.io</id>
+      <name>spring.io</name>
+      <url>http://repo.spring.io/plugins-release</url>
+    </repository>
+  </repositories>
+
+  <modules>
+    <module>web</module>
+    <module>test</module>
+  </modules>
+
+  <properties>
+    <!-- use UTF-8 for everything -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- dependency versions -->
+    <selenium.version>2.39.0</selenium.version>
+    <fitnesse.version>20131110</fitnesse.version>
+    <xebium.version>0.11</xebium.version>
+    <junit.version>4.11</junit.version>
+    <spring.version>4.0.0.RELEASE</spring.version>
+    <tomcat.version>7.0.34</tomcat.version>
+    <servlet-api.version>3.0.1</servlet-api.version>
+    <thymeleaf.version>2.0.15</thymeleaf.version>
+    <!-- plugin versions -->
+    <maven-failsafe>2.16</maven-failsafe>
+    <tomcat-maven>1.1</tomcat-maven>
+    <maven-antrun>1.7</maven-antrun>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- FitNesse -->
+      <dependency>
+        <groupId>org.fitnesse</groupId>
+        <artifactId>fitnesse</artifactId>
+        <version>${fitnesse.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>xml-apis</groupId>
+        <artifactId>xml-apis</artifactId>
+        <version>1.4.01</version>
+      </dependency>
+
+      <!-- Xebium -->
+      <dependency>
+        <groupId>com.xebia.incubator</groupId>
+        <artifactId>xebium</artifactId>
+        <version>${xebium.version}</version>
+      </dependency>
+
+      <!-- Selenium -->
+      <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-server</artifactId>
+        <version>${selenium.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-api</artifactId>
+        <version>${selenium.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-remote-driver</artifactId>
+        <version>${selenium.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>${selenium.version}</version>
+      </dependency>
+
+      <!-- Spring dependencies -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+
+      <!-- View template dependency -->
+      <dependency>
+        <groupId>org.thymeleaf</groupId>
+        <artifactId>thymeleaf-spring3</artifactId>
+        <version>${thymeleaf.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>${servlet-api.version}</version>
+      </dependency>
+
+      <!-- Test -->
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>${maven-failsafe}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>tomcat-maven-plugin</artifactId>
+          <version>${tomcat-maven}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>${maven-antrun}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

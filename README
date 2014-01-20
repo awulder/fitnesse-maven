@@ -1,0 +1,9 @@
+/
+mvn clean package
+
+/web/
+mvn tomcat:run
+
+/test/
+mvn test -Pfitnesse
+mvn clean integration-test -Pxebium
