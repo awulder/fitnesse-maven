@@ -1,11 +1,8 @@
-/
 mvn clean package
 
-/web/
-mvn tomcat:run
+start tomcat:   mvn tomcat:run
+start FitNesse: mvn test -Pfitnesse
 
-/test/
-mvn test -Pfitnesse
-mvn clean integration-test -Pxebium
+run FitNesse tests: mvn clean integration-test -Pxebium
 
 PHANTOMJS_BIN
