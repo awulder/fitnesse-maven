@@ -1,0 +1,5 @@
+!|scenario|open|page          |
+|ensure   |do  |open|on|/@page|
+
+!|scenario|Check word|word             |present on page|
+|ensure   |do        |verifyTextPresent|on    |@word   |

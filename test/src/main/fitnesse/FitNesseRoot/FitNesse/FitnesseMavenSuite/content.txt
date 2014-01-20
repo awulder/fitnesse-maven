@@ -1,0 +1,13 @@
+!contents -R2 -g -p -f -h
+----
+!*> '''Variables Defined'''
+!define TEST_SYSTEM {slim}
+!define COMMAND_PATTERN {java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 -cp %p %m}
+!define HELP_TOC {true}
+!define PROPERTY_TOC {true}
+!define REGRACE_TOC {true}
+**!
+!*****> '''Classpath'''
+!pomFile pom.xml@runtime
+!inheritClasspath
+*****!

@@ -1,0 +1,13 @@
+!*> Library
+!2 Given
+!|scenario|Given page1 is open|
+|open     |page1              |
+
+!2 Then
+|scenario  |Then the word Jumbotron heading should be present on the page|
+|Check word|Jumbotron heading              |present on page              |
+*!
+
+!|script                                                      |
+|Given page1 is open                                          |
+|Then the word Jumbotron heading should be present on the page|

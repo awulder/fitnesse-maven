@@ -1,0 +1,13 @@
+!*> Library
+!2 Given
+!|scenario|Given page2 is open|
+|open     |page2              |
+
+!2 Then
+!|scenario |Then the word Hello, world should be present on the page|
+|Check word|Hello, world              |present on page              |
+*!
+
+!|script                                                 |
+|Given page2 is open                                     |
+|Then the word Hello, world should be present on the page|
