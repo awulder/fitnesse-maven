@@ -1,8 +1,0 @@
-mvn clean package
-
-start tomcat:   mvn tomcat:run
-start FitNesse: mvn test -Pfitnesse
-
-run FitNesse tests: mvn clean integration-test -Pxebium
-
-PHANTOMJS_BIN
